@@ -1,7 +1,7 @@
 //import positive dataset structure from mat file
-loadmatfile("positivedata.mat");
+load("positivedata.mat");
 //pass data(positive structure name) and neg (negative images folder) and optional arguments
-trainCascadeObjectDetector("output.xml",data,"neg","numStages",10,'numPos',500,'numNeg',500)
+trainCascadeObjectDetector("data",data,"neg","numStages",10,'numPos',500,'numNeg',500,'nsplits',2)
 
 //  Creating positive samples:   
 // Info file name: positive.txt
@@ -46,4 +46,4 @@ trainCascadeObjectDetector("output.xml",data,"neg","numStages",10,'numPos',500,'
  //
 // ===== TRAINING 0-stage =====
 // <BEGIN
-// It will take time to train cascade and trained cascade is stored in output.xml file
+// It will take time to train cascade and trained cascade is stored in cascade.xml file inside data folder (first argument).
